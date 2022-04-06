@@ -16,9 +16,9 @@ function underConstruction() {
           come back and check it out later
         </h3>
       </div>
-      {/* <div className="footer">
-        <p>instagram</p>
-      </div> */}
+      <div className="footer">
+        <p></p>
+      </div>
     </div>
   );
 }
