@@ -1,15 +1,15 @@
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getFirestore, collection, getDocs } from "firebase/firestore/lite";
+import {getAnalytics} from "firebase/analytics";
+import {initializeApp} from "firebase/app";
+import {collection, getDocs, getFirestore} from "firebase/firestore/lite";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDxeqByiNtveQefXo7NEg-aloQgzqsuOQk",
-  authDomain: "portfolio-69a6c.firebaseapp.com",
-  projectId: "portfolio-69a6c",
-  storageBucket: "portfolio-69a6c.appspot.com",
-  messagingSenderId: "942919127119",
-  appId: "1:942919127119:web:f7a5c71435fea81c609a3a",
-  measurementId: "G-376Q69C3EL",
+  apiKey : "AIzaSyDxeqByiNtveQefXo7NEg-aloQgzqsuOQk",
+  authDomain : "portfolio-69a6c.firebaseapp.com",
+  projectId : "portfolio-69a6c",
+  storageBucket : "portfolio-69a6c.appspot.com",
+  messagingSenderId : "942919127119",
+  appId : "1:942919127119:web:f7a5c71435fea81c609a3a",
+  measurementId : "G-376Q69C3EL",
 };
 
 // Initialize Firebase
