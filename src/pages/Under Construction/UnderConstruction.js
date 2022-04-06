@@ -17,7 +17,7 @@ function underConstruction() {
         </h3>
       </div>
       <div className="footer">
-        <p></p>
+        <p>All rights reserved</p>
       </div>
     </div>
   );
