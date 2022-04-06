@@ -6,6 +6,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { db } from "./util/Firebase";
 import { getDoc, doc } from "firebase/firestore/lite";
 import UnderConstruction from "./pages/Under Construction/UnderConstruction";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
 
 function App() {
   const dispatch = useDispatch();
@@ -35,7 +37,9 @@ function App() {
   if (pre_checking === true) {
     return (
       <div className="App">
-        <p>Loading configs</p>
+        <Box sx={{ display: "flex" }}>
+          <CircularProgress />
+        </Box>
       </div>
     );
   } else if (under_construction === true) {
