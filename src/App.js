@@ -1,19 +1,20 @@
 import "./App.css";
 
-import {doc, getDoc} from "firebase/firestore/lite";
-import {useEffect} from "react";
-import {useDispatch, useSelector} from "react-redux";
+import { doc, getDoc } from "firebase/firestore/lite";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 import logo from "./logo.svg";
 import UnderConstruction from "./pages/Under Construction/UnderConstruction";
-import {setPreChecking, setUnderConstruction} from "./redux/configSlice";
-import {db} from "./util/Firebase";
+import { setPreChecking, setUnderConstruction } from "./redux/configSlice";
+import { db } from "./util/Firebase";
 
 function App() {
   const dispatch = useDispatch();
   const pre_checking = useSelector((state) => state.config.pre_checking);
-  const under_construction =
-      useSelector((state) => state.config.under_construction);
+  const under_construction = useSelector(
+    (state) => state.config.under_construction
+  );
 
   useEffect(() => {
     const getConfig = async () => {
@@ -22,18 +23,23 @@ function App() {
       if (!docRef.exists) {
         window.alert("error");
       } else {
-        dispatch(setPreChecking({pre_checking : false}));
-        dispatch(setUnderConstruction({
-          under_construction : docRef.data().under_construction,
-        }));
+        dispatch(setPreChecking({ pre_checking: false }));
+        dispatch(
+          setUnderConstruction({
+            under_construction: docRef.data().under_construction,
+          })
+        );
       }
     };
     getConfig();
-  }, [ dispatch ]);
+  }, [dispatch]);
 
   if (pre_checking === true) {
-    return (<div className = "App"><p>Loading configs</p>
-      </div>);
+    return (
+      <div className="App">
+        <p>Loading configs</p>
+      </div>
+    );
   } else if (under_construction === true) {
     return <UnderConstruction />;
   } else {
@@ -45,12 +51,16 @@ function App() {
             Edit <code>src/App.js</code> and save to reload.
           </p>
           <a
-    className = "App-link"
-    href = "https://reactjs.org"
-    target = "_blank"
-    rel = "noopener noreferrer" > welcome to portfolio</a>
-        </header><
-          /div>
+            className="App-link"
+            href="https://reactjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {" "}
+            welcome to portfolio
+          </a>
+        </header>
+      </div>
     );
   }
 }
